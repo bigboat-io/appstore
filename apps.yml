@@ -1,5 +1,6 @@
 - name: nginx
   version: '1.0'
+  description: Popular webserver and proxy
   image: https://pbs.twimg.com/profile_images/567774844322713600/tYoVju31.png
   dockerCompose: |
     version: '3.0'
@@ -50,5 +51,19 @@
     gui:
       endpoint: :8080
   
+- name: mongo-express
+  version: latest
+  description: User interface to manage a Mongo database
+  image: https://raw.githubusercontent.com/mongo-express/mongo-express-docker/master/logo.png
+  dockerCompose: |
+    version: '3.0'
+    services:
+      www:
+        image: knickers/mongo-express
+        environment:
+          - ME_CONFIG_MONGODB_SERVER=mongodb
+  bigboatCompose: |
+    name: mongo-express
+    version: 'latest'
         
           
