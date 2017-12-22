@@ -1,0 +1,10 @@
+- name: nginx
+  version: 1.0
+  dockerCompose: |
+    version: '3.0'
+    services:
+      www:
+        image: nginx
+  bigboatCompose: |
+    name: nginx
+    version: 1.0
